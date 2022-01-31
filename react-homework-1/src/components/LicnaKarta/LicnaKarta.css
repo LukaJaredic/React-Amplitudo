@@ -1,0 +1,7 @@
+.id-card__wrapper {
+    color: white;
+}
+
+.id-card__wrapper img {
+    border: 0.3rem white solid;
+}

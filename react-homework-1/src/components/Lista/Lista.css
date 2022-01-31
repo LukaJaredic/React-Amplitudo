@@ -1,0 +1,14 @@
+.list__wrapper {
+    max-width: 600px;
+    margin: 10vh auto;
+}
+
+h1 {
+    color: orangered;
+    border-bottom: solid orangered 3px;
+}
+
+.list__wrapper > * > h1 {
+    color: inherit;
+    border: none;
+}
