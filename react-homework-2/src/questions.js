@@ -77,6 +77,71 @@ const questions = [
         answers: ['American billionaire', 'Famous singer', 'Actor', 'Book character'],
         correct: 3,
     },
+    {
+        id: 11,
+        question: 'Dababy is:',
+        answers: ['American rapper', 'American rocker', 'Streamer', 'Woman'],
+        correct: 0,
+    },
+    {
+        id: 12,
+        question: 'What is Hitlers first name?',
+        answers: ['Andol', 'Vasilije', 'Kayle', 'Adolf'],
+        correct: 3,
+    },
+    {
+        id: 13,
+        question: 'Which is the strongest hand in poker?',
+        answers: ['4 tens', '3 kings', '3 aces', 'Ace King Queen Jack Ten (not the same color)'],
+        correct: 0,
+    },
+    {
+        id: 14,
+        question: 'Betting a lot of money on the hand that has very low chances of winning in poker is called:',
+        answers: ['Smoking', 'Juggling', 'Bluffing', '50 cent'],
+        correct: 2,
+    },
+    {
+        id: 15,
+        question: 'Sicilian defense, chess opening is initiated by black playing:',
+        answers: ['c5', 'd4', 'a9', 'b0'],
+        correct: 0,
+    },
+    {
+        id: 16,
+        question: 'Who is the current world chess champion?',
+        answers: ['Carlos Magnuson', 'Del Piero', 'Magnus Carlsen', 'Pier Dello'],
+        correct: 2,
+    },
+    {
+        id: 17,
+        question: 'How many Migos are there?',
+        answers: ['5', '2', '3', 'more than 500'],
+        correct: 3,
+    },
+    {
+        id: 18,
+        question: 'To "snitch" means to:',
+        answers: [
+            'Study hard',
+            'Tell the authority your friend did something wrong',
+            'To play cricket',
+            'To make money',
+        ],
+        correct: 1,
+    },
+    {
+        id: 19,
+        question: 'Buba Corelli:',
+        answers: ['Car brand', 'Singer', 'Insect only found in Italy', 'Insect only found in Asia'],
+        correct: 1,
+    },
+    {
+        id: 20,
+        question: "Famous streetwear brand's name is :",
+        answers: ['off-white', 'on-white', 'off-black', 'black-off'],
+        correct: 0,
+    },
 ]
 
 export default questions

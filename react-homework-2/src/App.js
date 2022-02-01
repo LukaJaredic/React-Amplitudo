@@ -8,12 +8,23 @@ import questions from './questions'
 function App() {
     const [quizStarted, setQuizStarted] = useState(false)
     const [quizEnded, setQuizEnded] = useState(false)
+    const [questionList, setQuestionList] = useState([])
     const [correct, setCorrect] = useState(0)
-    const [currentQuestion, setCurrentQuestion] = useState(0)
-    const [clock, setClock] = useState(<Clock time={10} timeRanOutHandler={timeRanOut} />)
+    const [currentQuestionIndex, setcurrentQuestionIndex] = useState(0)
+    const [clock, setClock] = useState(<Clock time={60} timeRanOutHandler={timeRanOut} />)
 
+    const startQuiz = () => {
+        const newQuestions = []
+        while (newQuestions.length < 10) {
+            let randIndex = Math.floor(Math.random() * questions.length + 1)
+            let newQuestion = questions[randIndex]
+            if (!newQuestions.includes(newQuestion)) newQuestions.push(newQuestion)
+        }
+        setQuestionList(newQuestions)
+        setQuizStarted(true)
+    }
     const nextQuestion = () => {
-        if (currentQuestion !== 10) setCurrentQuestion((prev) => prev + 1)
+        if (currentQuestionIndex !== 10) setcurrentQuestionIndex((prev) => prev + 1)
         else setQuizEnded(true)
     }
 
@@ -27,7 +38,8 @@ function App() {
         setQuizStarted((prev) => !prev)
         setQuizEnded(false)
         setCorrect(0)
-        setCurrentQuestion(0)
+        setcurrentQuestionIndex(0)
+        setQuestionList([])
         setClock(<Clock time={10} timeRanOutHandler={timeRanOut} />)
         setQuizStarted(true)
     }
@@ -35,11 +47,11 @@ function App() {
     return (
         <div className='App'>
             <h1>Quiz</h1>
-            {quizStarted ? clock : <Button text={'Start'} clickHandler={() => setQuizStarted(true)} />}
+            {quizStarted ? clock : <Button text={'Start'} clickHandler={startQuiz} />}
 
             {quizStarted && !quizEnded ? (
                 <QuestionCard
-                    question={questions[currentQuestion]}
+                    question={questionList[currentQuestionIndex]}
                     handleCorrectAnswer={() => setCorrect((prev) => prev + 1)}
                     getNextQuestion={nextQuestion}
                 />
