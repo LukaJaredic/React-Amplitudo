@@ -117,7 +117,7 @@ const questions = [
         id: 17,
         question: 'How many Migos are there?',
         answers: ['5', '2', '3', 'more than 500'],
-        correct: 3,
+        correct: 2,
     },
     {
         id: 18,

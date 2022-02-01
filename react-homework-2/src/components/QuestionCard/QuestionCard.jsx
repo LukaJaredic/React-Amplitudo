@@ -1,6 +1,12 @@
 import React, { useRef } from 'react'
+import './QuestionCard.css'
 
-export const QuestionCard = ({ question, handleCorrectAnswer, handleWrongAnswer, getNextQuestion }) => {
+export const QuestionCard = ({
+    question = { answers: [], correct: -1, question: '' },
+    handleCorrectAnswer = () => {},
+    handleWrongAnswer = () => {},
+    getNextQuestion = () => {},
+}) => {
     let rightAnswer = useRef(null)
     let userAnswer = useRef(null)
 
@@ -23,11 +29,12 @@ export const QuestionCard = ({ question, handleCorrectAnswer, handleWrongAnswer,
     }
 
     return (
-        <div>
-            <h2>Q: {question.question}</h2>
+        <div className='question-card'>
+            <h2 className='question-card__header'>Q: {question.question}</h2>
             <ul>
                 {question.answers.map((answer, index) => (
                     <li
+                        className='question-card__answer'
                         key={index}
                         ref={question.correct === index ? rightAnswer : null}
                         onClick={(event) => handleAnswer(event)}

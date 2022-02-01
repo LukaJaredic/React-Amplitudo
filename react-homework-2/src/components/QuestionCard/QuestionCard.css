@@ -1,0 +1,28 @@
+.question-card {
+    border-top: solid gray 2px;
+    border-bottom: solid gray 2px;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+ul {
+    padding: 0;
+}
+.question-card__header {
+    color: rgb(41, 58, 90);
+}
+
+.question-card__answer {
+    padding: 0.5rem;
+    margin-block: 0.5rem;
+    margin-inline: 0;
+    border: darkgray solid 0.1rem;
+    list-style: none;
+    font-size: 1.5rem;
+    min-width: 40vw;
+    transition: transform ease-in-out 100ms;
+    cursor: pointer;
+}
+
+.question-card__answer:hover {
+    transform: scale(1.1);
+}

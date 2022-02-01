@@ -16,7 +16,7 @@ function App() {
     const startQuiz = () => {
         const newQuestions = []
         while (newQuestions.length < 10) {
-            let randIndex = Math.floor(Math.random() * questions.length + 1)
+            let randIndex = Math.floor(Math.random() * questions.length)
             let newQuestion = questions[randIndex]
             if (!newQuestions.includes(newQuestion)) newQuestions.push(newQuestion)
         }
@@ -24,8 +24,11 @@ function App() {
         setQuizStarted(true)
     }
     const nextQuestion = () => {
-        if (currentQuestionIndex !== 10) setcurrentQuestionIndex((prev) => prev + 1)
-        else setQuizEnded(true)
+        if (currentQuestionIndex < 9) setcurrentQuestionIndex((prev) => prev + 1)
+        else {
+            setClock(null)
+            setQuizEnded(true)
+        }
     }
 
     //Cannot be an arrow f because arrow fs cannot be used in an earlier line of code then the line where u declare them
@@ -35,13 +38,12 @@ function App() {
     }
 
     const restart = () => {
-        setQuizStarted((prev) => !prev)
+        setQuizStarted(false)
         setQuizEnded(false)
         setCorrect(0)
         setcurrentQuestionIndex(0)
-        setQuestionList([])
-        setClock(<Clock time={10} timeRanOutHandler={timeRanOut} />)
-        setQuizStarted(true)
+        setClock(<Clock time={60} timeRanOutHandler={timeRanOut} />)
+        startQuiz()
     }
 
     return (

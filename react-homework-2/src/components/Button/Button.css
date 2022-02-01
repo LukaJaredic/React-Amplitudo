@@ -1,0 +1,17 @@
+button {
+    width: 5rem;
+    height: 5rem;
+    font-size: 1.25rem;
+    border-radius: 50%;
+    background: yellowgreen;
+    color: white;
+    border: cornflowerblue solid 0.2rem;
+    outline: 0.3rem white solid;
+    outline-offset: -0.4rem;
+    transition: all ease-in-out 300ms;
+}
+
+button:hover {
+    background: cornflowerblue;
+    border-color: yellowgreen;
+}

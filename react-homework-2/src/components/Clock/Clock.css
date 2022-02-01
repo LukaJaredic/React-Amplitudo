@@ -1,0 +1,16 @@
+.clock {
+    border-block: 1px solid gray;
+    padding-bottom: 1rem;
+}
+
+.clock__heading {
+    font-size: 1.25rem;
+}
+
+.time {
+    font-size: 1.125rem;
+}
+
+.time-wrapper {
+    transition: transform ease-in-out 100ms;
+}
