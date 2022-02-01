@@ -78,3 +78,5 @@ const questions = [
         correct: 3,
     },
 ]
+
+export default questions
