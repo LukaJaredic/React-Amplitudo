@@ -1,14 +1,7 @@
 import React from 'react'
-import './Film.css'
-/*Naziv
-Godina
-Žanr
-Režiser
-Glumci
-Slika (iskoristiti komponentu Slika)
-Sve informacije se prosleđuju komponen
-*/
-export const Film = ({ title, year, ganre, author, actors, children }) => {
+import './Movie.css'
+
+export const Movie = ({ title, year, ganre, author, actors, children }) => {
     return (
         <div className='movie__wrapper'>
             <h1 className='movie__title'>{title}</h1>

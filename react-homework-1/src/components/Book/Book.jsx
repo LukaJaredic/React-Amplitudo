@@ -1,12 +1,7 @@
 import React from 'react'
-import './Knjiga.css'
-/*Naslov
-Godina izdavanja
-Autor
-Slika (iskoristiti komponentu Slika)
-Citat
-*/
-export const Knjiga = ({ title, year, author, quote, children }) => {
+import './Book.css'
+
+export const Book = ({ title, year, author, quote, children }) => {
     return (
         <div className='book__wrapper'>
             <h1 className='book__title'>{title}</h1>

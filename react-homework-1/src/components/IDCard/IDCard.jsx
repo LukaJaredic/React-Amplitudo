@@ -1,7 +1,7 @@
 import React from 'react'
-import './LicnaKarta.css'
+import './IDCard.css'
 
-export const LicnaKarta = ({ name, surname, dob, city, children }) => {
+export const IDCard = ({ name, surname, dob, city, children }) => {
     return (
         <div className='id-card__wrapper'>
             <h1 className='id-card__name'>

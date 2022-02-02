@@ -26,7 +26,7 @@ export const Clock = ({ time, timeRanOutHandler }) => {
         }, 1000)
 
         return () => clearInterval(timeIntervalRef.current)
-    })
+    }, [])
     return (
         <div className='clock'>
             <p className='clock__heading'>Time left:</p>

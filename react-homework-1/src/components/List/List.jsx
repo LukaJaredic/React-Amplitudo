@@ -1,6 +1,6 @@
 import React from 'react'
-import './Lista.css'
+import './List.css'
 
-export const Lista = ({ children }) => {
+export const List = ({ children }) => {
     return <div className='list__wrapper'>{children}</div>
 }

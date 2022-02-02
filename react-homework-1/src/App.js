@@ -1,9 +1,9 @@
 import './App.css'
-import { Lista } from './components/Lista/Lista'
-import { LicnaKarta } from './components/LicnaKarta/LicnaKarta'
-import { Slika } from './components/Slika/Slika'
-import { Knjiga } from './components/Knjiga/Knjiga'
-import { Film } from './components/Film/Film'
+import { List } from './components/List/List'
+import { IDCard } from './components/IDCard/IDCard'
+import { Slika } from './components/Image/Image'
+import { Book } from './components/Book/Book'
+import { Movie } from './components/Movie/Movie'
 
 function App() {
     const celebrities = [
@@ -90,36 +90,42 @@ function App() {
 
     const celebrityList = celebrities.map((celebrity) => {
         return (
-            <LicnaKarta name={celebrity.name} surname={celebrity.surname} dob={celebrity.dob} city={celebrity.city}>
+            <IDCard name={celebrity.name} surname={celebrity.surname} dob={celebrity.dob} city={celebrity.city}>
                 <Slika src={celebrity.imgSrc} alt={celebrity.imgAlt} />
-            </LicnaKarta>
+            </IDCard>
         )
     })
     const bookList = books.map((book) => {
         return (
-            <Knjiga title={book.title} year={book.year} author={book.author} quote={book.quote}>
+            <Book title={book.title} year={book.year} author={book.author} quote={book.quote}>
                 <Slika src={book.imgSrc} alt={book.imgAlt} />
-            </Knjiga>
+            </Book>
         )
     })
 
     const movieList = movies.map((movie) => {
         return (
-            <Film title={movie.title} year={movie.year} ganre={movie.ganre} author={movie.author} actors={movie.actors}>
+            <Movie
+                title={movie.title}
+                year={movie.year}
+                ganre={movie.ganre}
+                author={movie.author}
+                actors={movie.actors}
+            >
                 <Slika src={movie.imgSrc} alt={movie.imgAlt} />
-            </Film>
+            </Movie>
         )
     })
     return (
         <div className='App'>
-            <Lista>
+            <List>
                 <h1 class='main__heading'>Celebrities:</h1>
                 {celebrityList}
                 <h1 class='main__heading'>Books:</h1>
                 {bookList}
                 <h1 className='meain__heading'>Movies: </h1>
                 {movieList}
-            </Lista>
+            </List>
         </div>
     )
 }
