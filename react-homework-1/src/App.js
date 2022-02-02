@@ -90,14 +90,20 @@ function App() {
 
     const celebrityList = celebrities.map((celebrity) => {
         return (
-            <IDCard name={celebrity.name} surname={celebrity.surname} dob={celebrity.dob} city={celebrity.city}>
+            <IDCard
+                name={celebrity.name}
+                surname={celebrity.surname}
+                dob={celebrity.dob}
+                city={celebrity.city}
+                key={celebrity.name}
+            >
                 <Slika src={celebrity.imgSrc} alt={celebrity.imgAlt} />
             </IDCard>
         )
     })
     const bookList = books.map((book) => {
         return (
-            <Book title={book.title} year={book.year} author={book.author} quote={book.quote}>
+            <Book title={book.title} year={book.year} author={book.author} quote={book.quote} key={book.title}>
                 <Slika src={book.imgSrc} alt={book.imgAlt} />
             </Book>
         )
@@ -111,6 +117,7 @@ function App() {
                 ganre={movie.ganre}
                 author={movie.author}
                 actors={movie.actors}
+                key={movie.title}
             >
                 <Slika src={movie.imgSrc} alt={movie.imgAlt} />
             </Movie>
@@ -118,14 +125,12 @@ function App() {
     })
     return (
         <div className='App'>
-            <List>
-                <h1 class='main__heading'>Celebrities:</h1>
-                {celebrityList}
-                <h1 class='main__heading'>Books:</h1>
-                {bookList}
-                <h1 className='meain__heading'>Movies: </h1>
-                {movieList}
-            </List>
+            <h1 className='main__heading mhceleb'>Celebrities:</h1>
+            <List>{celebrityList}</List>
+            <h1 className='main__heading mhbook'>Books:</h1>
+            <List>{bookList}</List>
+            <h1 className='meain__heading mhmovie'>Movies: </h1>
+            <List>{movieList}</List>
         </div>
     )
 }

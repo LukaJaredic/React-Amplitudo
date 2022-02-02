@@ -1,3 +1,111 @@
 .book__wrapper img {
-    border: 0.3rem solid tomato;
+    border: 0.3rem solid royalblue;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    transition: all ease-in-out 300ms;
+}
+
+.book__wrapper {
+    position: relative;
+    color: royalblue;
+}
+
+.book__wrapper:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.book__wrapper:nth-child(2) {
+    grid-column: 2;
+    grid-row: 2;
+}
+.book__wrapper:nth-child(1) {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.book__wrapper:hover .book__quote,
+.book__wrapper:active .book__quote {
+    opacity: 1;
+    z-index: 9999;
+}
+
+.book__wrapper:nth-child(1) .book__quote {
+    left: calc(100% + 2rem);
+    top: 25%;
+}
+
+.book__wrapper:nth-child(1):hover img,
+.book__wrapper:nth-child(1):active img {
+    width: 1%;
+    left: 99%;
+}
+
+.book__wrapper:nth-child(2):hover img,
+.book__wrapper:nth-child(2):active img {
+    width: 1%;
+    left: 0%;
+}
+.book__wrapper:nth-child(3):hover img,
+.book__wrapper:nth-child(3):active img {
+    height: 1%;
+    top: 99%;
+}
+
+.book__wrapper:nth-child(2) .book__quote {
+    left: calc(-100% - 5rem);
+    top: 25%;
+}
+
+@media only screen and (max-width: 600px) {
+    .book__wrapper:nth-child(1):hover img,
+    .book__wrapper:nth-child(1):active img {
+        width: 100%;
+        left: 0;
+        height: 1%;
+        top: 99%;
+    }
+
+    .book__wrapper:nth-child(2):hover img,
+    .book__wrapper:nth-child(2):active img {
+        width: 100%;
+        left: 0;
+        height: 1%;
+        top: 99%;
+    }
+    .book__wrapper:nth-child(3):hover img,
+    .book__wrapper:nth-child(3):active img {
+        width: 100%;
+        left: 0;
+        height: 1%;
+        top: 99%;
+    }
+
+    .book__wrapper:nth-child(1) .book__quote,
+    .book__wrapper:nth-child(2) .book__quote,
+    .book__wrapper:nth-child(3) .book__quote {
+        max-width: 80%;
+        left: 0.5rem;
+        top: calc(100% + 1rem);
+    }
+}
+
+.book__quote {
+    background: white;
+    border-top-left-radius: 12px;
+    border-bottom: 0.3rem solid royalblue;
+    border-left: 0.3rem solid royalblue;
+
+    border-bottom-right-radius: 12px;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding: 1rem;
+    z-index: -9999;
+    opacity: 0;
+    transition: all ease-in-out 3000ms;
+    font-style: italic;
 }

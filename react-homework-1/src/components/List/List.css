@@ -1,14 +1,20 @@
 .list__wrapper {
     max-width: 600px;
-    margin: 10vh auto;
+    margin: 5vh auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 3%;
+    position: relative;
 }
 
-h1 {
-    color: orangered;
-    border-bottom: solid orangered 3px;
-}
-
-.list__wrapper > * > h1 {
-    color: inherit;
-    border: none;
+@media only screen and (max-width: 600px) {
+    .list__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
 }
