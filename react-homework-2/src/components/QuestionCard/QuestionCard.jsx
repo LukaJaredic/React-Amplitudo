@@ -7,22 +7,25 @@ export const QuestionCard = ({
     handleWrongAnswer = () => {},
     getNextQuestion = () => {},
 }) => {
-    let rightAnswer = useRef(null)
-    let userAnswer = useRef(null)
+    let correctAnswerRef = useRef(null)
+    let userAnswerRef = useRef(null)
+    let ulRef = useRef(null) //used to disable clicks between questions
 
     const handleAnswer = (event) => {
-        rightAnswer.current.style.background = 'green'
-        userAnswer.current = event.currentTarget
+        ulRef.current.style['pointer-events'] = 'none'
+        correctAnswerRef.current.style.background = 'green'
+        userAnswerRef.current = event.currentTarget
 
-        if (rightAnswer.current !== userAnswer.current) {
-            userAnswer.current.style.background = 'tomato'
+        if (correctAnswerRef.current !== userAnswerRef.current) {
+            userAnswerRef.current.style.background = 'tomato'
         } else {
             handleCorrectAnswer()
         }
 
         setTimeout(() => {
-            rightAnswer.current.style.background = 'white'
-            userAnswer.current.style.background = 'white'
+            correctAnswerRef.current.style.background = 'white'
+            userAnswerRef.current.style.background = 'white'
+            ulRef.current.style['pointer-events'] = 'auto'
 
             getNextQuestion()
         }, 350)
@@ -31,12 +34,12 @@ export const QuestionCard = ({
     return (
         <div className='question-card'>
             <h2 className='question-card__header'>Q: {question.question}</h2>
-            <ul>
+            <ul ref={ulRef}>
                 {question.answers.map((answer, index) => (
                     <li
                         className='question-card__answer'
-                        key={index}
-                        ref={question.correct === index ? rightAnswer : null}
+                        key={question.id + '-' + index}
+                        ref={question.correct === index ? correctAnswerRef : null}
                         onClick={(event) => handleAnswer(event)}
                     >
                         {answer}
