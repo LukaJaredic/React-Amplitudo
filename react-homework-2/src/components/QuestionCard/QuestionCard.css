@@ -13,6 +13,7 @@ ul {
 
 .question-card__answer {
     padding: 0.5rem;
+    background: white;
     margin-block: 0.5rem;
     margin-inline: 0;
     border: darkgray solid 0.1rem;
@@ -24,5 +25,5 @@ ul {
 }
 
 .question-card__answer:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }

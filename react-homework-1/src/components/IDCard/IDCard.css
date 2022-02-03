@@ -1,9 +1,9 @@
 .id-card__wrapper {
-    color: rgb(43, 40, 40);
+    color: white;
     position: relative;
     flex-wrap: wrap;
     border-radius: 14px;
-    background: white;
+    background: rgba(128, 128, 128, 0.39);
 }
 
 .id-card__wrapper:nth-child(1) {
@@ -37,4 +37,11 @@
 .id-card__wrapper:active img {
     height: 3%;
     top: 97%;
+}
+
+.id-card__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

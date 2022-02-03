@@ -1,6 +1,40 @@
 .App {
     text-align: center;
     color: cornflowerblue;
-    width: fit-content;
-    height: fit-content;
+
+    background-color: rgba(255, 255, 255, 0.84);
+    padding: 2rem;
+    border-radius: 4px;
+    border-left: royalblue 0.1rem solid;
+    border-top: royalblue 0.1rem solid;
+    border-right: yellowgreen 0.1rem solid;
+    border-bottom: yellowgreen 0.1rem solid;
+    color: rgb(41, 58, 90);
+}
+
+button:hover {
+    transform: scale(0.9);
+}
+
+.background-1 {
+    position: absolute;
+
+    min-width: 100vw;
+    min-height: 49vh;
+    width: 100%;
+    height: 49%;
+    left: 0;
+    top: 0;
+    z-index: -9999;
+    background: yellowgreen;
+}
+
+.background-2 {
+    position: absolute;
+    width: 100vw;
+    height: max(49%, 49vh);
+    left: 0;
+    top: max(50vh, 50%);
+    z-index: -9999;
+    background: royalblue;
 }

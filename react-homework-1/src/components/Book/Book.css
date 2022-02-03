@@ -11,6 +11,7 @@
 .book__wrapper {
     position: relative;
     color: royalblue;
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .book__wrapper:nth-child(3) {
@@ -90,6 +91,21 @@
         max-width: 80%;
         left: 0.5rem;
         top: calc(100% + 1rem);
+    }
+
+    .book__quote::before {
+        content: '';
+        width: 0;
+        height: 0;
+        width: 0;
+        height: 0;
+        border-left: 1rem solid transparent;
+        border-right: 1rem solid transparent;
+
+        border-bottom: 1rem solid white;
+        position: absolute;
+        top: -1rem;
+        left: calc(50% - 1rem);
     }
 }
 

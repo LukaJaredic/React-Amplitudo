@@ -8,25 +8,29 @@ export const Clock = ({ time, timeRanOutHandler }) => {
 
     useEffect(() => {
         timeIntervalRef.current = setInterval(() => {
-            if (timeLeft === 0) {
-                timeRanOutHandler()
-                return clearInterval(timeIntervalRef.current)
-            }
             setTimeLeft((prev) => prev - 1)
-            if (timeLeft <= 26) {
-                wrapperRef.current.style.color = 'tomato'
-                if (timeLeft % 2 === 0) {
-                    wrapperRef.current.style.transform = 'scale(1.1)'
-                } else {
-                    wrapperRef.current.style.transform = 'scale(1)'
-                }
-            } else {
-                wrapperRef.current.style.color = 'inherit'
-            }
         }, 1000)
-
         return () => clearInterval(timeIntervalRef.current)
-    }, [])
+    }, [time])
+
+    useEffect(() => {
+        if (timeLeft <= 0) {
+            clearInterval(timeIntervalRef.current)
+            timeRanOutHandler()
+        }
+
+        if (timeLeft <= 26) {
+            wrapperRef.current.style.color = 'tomato'
+            if (timeLeft % 2 === 0) {
+                wrapperRef.current.style.transform = 'scale(1.1)'
+            } else {
+                wrapperRef.current.style.transform = 'scale(1)'
+            }
+        } else {
+            wrapperRef.current.style.color = 'inherit'
+        }
+    }, [timeLeft])
+
     return (
         <div className='clock'>
             <p className='clock__heading'>Time left:</p>
