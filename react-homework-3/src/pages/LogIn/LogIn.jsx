@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Input, Button, Card } from 'antd'
-import { blue, magenta } from '@ant-design/colors'
+import { grey } from '@ant-design/colors'
 
 export const LogIn = () => {
     const onFinish = (values) => {
@@ -9,11 +9,11 @@ export const LogIn = () => {
     }
 
     const formStyle = {
-        padding: '1rem',
+        background: grey[0],
     }
 
     return (
-        <Card title='Amplitudo academy homework 3'>
+        <Card title='Amplitudo academy homework 3' style={formStyle}>
             <h1>Please log in</h1>
             <Form
                 name='basic'
@@ -22,7 +22,6 @@ export const LogIn = () => {
                 wrapperCol={{ span: 16 }}
                 onFinish={onFinish}
                 autoComplete='off'
-                style={formStyle}
             >
                 <Form.Item
                     label='Username'
