@@ -6,7 +6,7 @@ export const ProtectedRoute = ({ children }) => {
     let username = localStorage.getItem('username')
 
     useEffect(() => {
-        if (!username) navigate('login')
+        if (!username) navigate('/login')
     }, [])
 
     return children

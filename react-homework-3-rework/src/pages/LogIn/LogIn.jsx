@@ -10,7 +10,7 @@ export const LogIn = () => {
         alert('finished')
         localStorage.setItem('username', values.username)
         localStorage.setItem('password', values.password)
-        navigate('/')
+        navigate('/dashboard')
     }
 
     const wrapperStyle = {
