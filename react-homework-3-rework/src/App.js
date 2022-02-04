@@ -5,16 +5,22 @@ import { LogIn } from './pages/LogIn/LogIn'
 import 'antd/dist/antd.css'
 import { ProtectedRoute } from './pages/ProtectedRoute/ProtectedRoute'
 import { IDCard } from './components/IDCard/IDCard'
-import { books, celebrities, movies } from './data'
+import data from './data'
 import { List } from './components/List/List'
 import { Welcome } from './pages/Dashboard/components/Welcome/Welcome'
 import { Book } from './components/Book/Book'
 import { Movie } from './components/Movie/Movie'
+import { useState } from 'react'
+import { BookForm } from './components/BookForm/BookForm'
 
 function App() {
+    const [celebrities, setCelebrities] = useState(data.celebrities)
+    const [books, setBooks] = useState(data.books)
+    const [movies, setMovies] = useState(data.movies)
     return (
         <BrowserRouter>
             <Routes>
+                <Route path='test' element={<BookForm />} />
                 <Route path='login' element={<LogIn />} />
 
                 <Route

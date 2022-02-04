@@ -1,4 +1,4 @@
-export const celebrities = [
+const celebrities = [
     {
         id: 1,
         name: 'Ronaldo',
@@ -27,7 +27,7 @@ export const celebrities = [
         imgAlt: 'Stone statue of Buddha',
     },
 ]
-export const books = [
+const books = [
     {
         id: 4,
         title: 'Power of now',
@@ -56,7 +56,7 @@ export const books = [
         imgAlt: 'Book cover with 2 men on it',
     },
 ]
-export const movies = [
+const movies = [
     {
         id: 6,
         title: '12 angry men',
@@ -88,3 +88,7 @@ export const movies = [
         imgAlt: 'Movie poster of a man and a woman dancing',
     },
 ]
+
+const data = { celebrities: celebrities, movies: movies, books: books }
+
+export default data

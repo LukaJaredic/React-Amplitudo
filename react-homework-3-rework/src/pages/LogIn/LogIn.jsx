@@ -7,7 +7,6 @@ export const LogIn = () => {
     const navigate = useNavigate()
 
     const onFinish = (values) => {
-        alert('finished')
         localStorage.setItem('username', values.username)
         localStorage.setItem('password', values.password)
         navigate('/dashboard')

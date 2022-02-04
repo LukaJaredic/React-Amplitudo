@@ -1,25 +1,37 @@
 import React from 'react'
 import { Layout, Menu } from 'antd'
-import { Link, Outlet, Route, Routes } from 'react-router-dom'
-import { LogIn } from '../LogIn/LogIn'
+import { NavLink, Outlet, useNavigate } from 'react-router-dom'
+import './Dashboard.css'
+
 const { Header, Content, Footer } = Layout
 
 export const Dashboard = () => {
+    const navigate = useNavigate()
+
+    const onLogOut = () => {
+        localStorage.clear()
+        navigate('/login')
+    }
+
     const layoutStyle = { minHeight: '100vh' }
 
     return (
         <Layout className='layout' style={layoutStyle}>
             <Header>
                 <div className='logo' />
-                <Menu theme='dark' mode='horizontal' defaultSelectedKeys={['2']}>
+                <Menu theme='dark' mode='horizontal'>
                     <Menu.Item key={1}>
-                        <Link to='celebrities'>Celebrities</Link>
+                        <NavLink to='celebrities'>Celebrities</NavLink>
                     </Menu.Item>
                     <Menu.Item key={2}>
-                        <Link to='books'>Books</Link>
+                        <NavLink to='books'>Books</NavLink>
                     </Menu.Item>
                     <Menu.Item key={3}>
-                        <Link to='movies'>Movies</Link>
+                        <NavLink to='movies'>Movies</NavLink>
+                    </Menu.Item>
+
+                    <Menu.Item className='log-out' onClick={onLogOut}>
+                        Log out
                     </Menu.Item>
                 </Menu>
             </Header>
@@ -28,7 +40,7 @@ export const Dashboard = () => {
                     <Outlet />
                 </div>
             </Content>
-            <Footer style={{ textAlign: 'center' }}>Ant Design ©2022 Created by Luigi</Footer>
+            <Footer style={{ textAlign: 'center' }}>Amplitudo d.o.o ©2022 Created by Luigi</Footer>
         </Layout>
     )
 }

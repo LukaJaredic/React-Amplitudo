@@ -12,7 +12,7 @@ export const Movie = ({ title, year, ganre, author, actors, imgSrc, imgAlt }) =>
                         <h1>{author}</h1>
                         <h2>{year}.</h2>
                         <h3>{ganre}</h3>
-                        <p>Actors: {actors}</p>
+                        <p>Actors: {actors} ...</p>
                     </>
                 }
             />
